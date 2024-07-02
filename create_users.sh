@@ -3,7 +3,8 @@
 #Verify if running as root
 #if user ID not equal to 0
 if [[ $UID -ne 0 ]]; then
-    echo "You need to run the script as root"
+    echo "You need to run the script as root" | tee -a $LOG_FILE
+    
     #if condition is false, exit with error
     exit 1
 fi
